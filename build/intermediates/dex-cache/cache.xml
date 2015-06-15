@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/home/misskey/AndroidStudioProjects/PictrueManager/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="1ee588ff2c4daf7b97c1cbf922a6c7f027285c2f">
+        <dex dex="/home/misskey/AndroidStudioProjects/PictrueManager/app/build/intermediates/pre-dexed/debug/classes-b14b2ab3ec8bdc9ac93c71246b07f1c473e740ef.jar" />
+    </item>
+    <item
+        jar="/home/misskey/AndroidStudioProjects/PictrueManager/app/libs/universal-image-loader-1.9.4.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="dd9eeb557650c4ad7394df23f0f5cf27a7cfc697">
+        <dex dex="/home/misskey/AndroidStudioProjects/PictrueManager/app/build/intermediates/pre-dexed/debug/universal-image-loader-1.9.4-8dfd43cf509e210d6866194152bce8824bdde6f8.jar" />
+    </item>
+    <item
+        jar="/home/misskey/AndroidStudioProjects/PictrueManager/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="73753982da6bde518f3a4c6b372749981d14d1a0">
+        <dex dex="/home/misskey/AndroidStudioProjects/PictrueManager/app/build/intermediates/pre-dexed/debug/classes-138542f6d0e2f3a2ebec71ab41bd7db5a3aa14b3.jar" />
+    </item>
+    <item
+        jar="/home/misskey/AndroidStudioProjects/PictrueManager/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/jars/libs/internal_impl-22.2.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="57f2ab85c164ff1676ec64dee787981c046fab79">
+        <dex dex="/home/misskey/AndroidStudioProjects/PictrueManager/app/build/intermediates/pre-dexed/debug/internal_impl-22.2.0-9972109776a98f91cfb299cfbc51ffb18139681c.jar" />
+    </item>
+    <item
+        jar="/home/misskey/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/22.2.0/support-annotations-22.2.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="66b42a1f3eb7676070b7ef7f14b603483aecbee1">
+        <dex dex="/home/misskey/AndroidStudioProjects/PictrueManager/app/build/intermediates/pre-dexed/debug/support-annotations-22.2.0-6b9bb7944b438f1b2012087d7e71d71f08893ab8.jar" />
+    </item>
+
+</items>

@@ -1,0 +1,67 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:id="@+id/id_ll_container"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+  <FrameLayout
+      android:layout_width="fill_parent"
+      android:id="@+id/framelayout"
+      android:layout_height="70dp">
+      <LinearLayout
+          android:id="@+id/ll_btn"
+          android:layout_width="fill_parent"
+          android:layout_height="70dp"
+          android:background="#5B5B5B"
+          android:orientation="horizontal">
+          <Button
+              android:id="@+id/btn_camepicture"
+              android:text="相机拍摄"
+              android:textColor="#00BFFF"
+              android:textSize="20sp"
+              android:layout_width="0dp"
+              android:background="#666666"
+              android:layout_height="fill_parent"
+              android:layout_weight="1"/>
+          <Button
+              android:id="@+id/btn_allpicture"
+              android:textSize="20sp"
+              android:text="所有照片"
+              android:background="#666666"
+              android:layout_width="0dp"
+              android:layout_height="fill_parent"
+              android:layout_weight="1"/>
+      </LinearLayout>
+      <LinearLayout
+          android:background="#D1D1D1"
+          android:id="@+id/ll_textview"
+          android:layout_width="fill_parent"
+          android:visibility="gone"
+          android:layout_height="70dp">
+          <ImageButton
+              android:id="@+id/btn_back"
+              android:layout_width="wrap_content"
+              android:src="@drawable/back"
+              android:layout_height="wrap_content" />
+          <TextView
+              android:layout_margin="10dp"
+              android:layout_width="wrap_content"
+              android:id="@+id/top_tip"
+              android:layout_gravity="center"
+              android:text="test"
+              android:textSize="24sp"
+              android:layout_height="wrap_content" />
+      </LinearLayout>
+  </FrameLayout>
+
+
+    <android.support.v4.view.ViewPager
+            android:layout_width="fill_parent"
+            android:layout_weight="1"
+            android:id="@+id/viewpager"
+            android:layout_height="0dp"
+        />
+
+
+
+</LinearLayout>

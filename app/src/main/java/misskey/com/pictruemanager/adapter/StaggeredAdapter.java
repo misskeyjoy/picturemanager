@@ -29,7 +29,7 @@ public class StaggeredAdapter  extends  RecyclerView.Adapter<StaggeredAdapter.My
 
     @Override
     public void onBindViewHolder(MyViewHodler myViewHodler, int i) {
-
+         myViewHodler.iv.setImageBitmap(null);
     }
 
     @Override

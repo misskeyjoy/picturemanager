@@ -68,8 +68,7 @@ public class PictureFragment extends Fragment {
          protected Bitmap doInBackground(Void... params) {
               Bundle args=getArguments();
              String photopath= args.getString("camephoto");
-            //下面代码存在很大的bug 内存异常， 线程为退出，，，
-
+            //下面代码存在很大的bug 内存异常， 线程为退出，，
              BitmapFactory.Options opts = new BitmapFactory.Options();
              // 不读取像素数组到内存中，仅读取图片的信息
              opts.inJustDecodeBounds = true;

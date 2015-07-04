@@ -1,5 +1,6 @@
 package misskey.com.pictruemanager.adapter;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import android.content.Context;
@@ -29,13 +30,15 @@ public class PhotoGridAdapter extends BaseAdapter {
     private List<PhotoInfo> list;
     private ViewHolder viewHolder;
     private int width;
-
     public  class ViewHolder {
          public ImageView imageView;
     }
 
     public PhotoGridAdapter(Context mContext, List<PhotoInfo> list) {
         this.list = list;
+        /**
+         * 获取屏幕的宽
+         */
         DisplayMetrics dm = new DisplayMetrics();
         WindowManager manager = (WindowManager)mContext.getSystemService(Context.WINDOW_SERVICE);
         manager.getDefaultDisplay().getMetrics(dm);

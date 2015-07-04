@@ -2,39 +2,46 @@
 <items version="2" >
 
     <item
-        jar="/home/misskey/AndroidStudioProjects/PictrueManager/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/jars/classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="1ee588ff2c4daf7b97c1cbf922a6c7f027285c2f">
-        <dex dex="/home/misskey/AndroidStudioProjects/PictrueManager/app/build/intermediates/pre-dexed/debug/classes-b14b2ab3ec8bdc9ac93c71246b07f1c473e740ef.jar" />
-    </item>
-    <item
-        jar="/home/misskey/AndroidStudioProjects/PictrueManager/app/libs/universal-image-loader-1.9.4.jar"
+        jar="/home/misskey/AndroidStudioProjects/picturemanager/app/libs/universal-image-loader-1.9.4.jar"
         jumboMode="false"
         revision="22.0.1"
         sha1="dd9eeb557650c4ad7394df23f0f5cf27a7cfc697">
-        <dex dex="/home/misskey/AndroidStudioProjects/PictrueManager/app/build/intermediates/pre-dexed/debug/universal-image-loader-1.9.4-8dfd43cf509e210d6866194152bce8824bdde6f8.jar" />
+        <dex dex="/home/misskey/AndroidStudioProjects/picturemanager/app/build/intermediates/pre-dexed/debug/universal-image-loader-1.9.4-60662f1ba37529f15c4ed6aeed68538b2b42533d.jar" />
     </item>
     <item
-        jar="/home/misskey/AndroidStudioProjects/PictrueManager/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/jars/classes.jar"
+        jar="/home/misskey/AndroidStudioProjects/picturemanager/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/22.2.0/jars/classes.jar"
         jumboMode="false"
         revision="22.0.1"
-        sha1="73753982da6bde518f3a4c6b372749981d14d1a0">
-        <dex dex="/home/misskey/AndroidStudioProjects/PictrueManager/app/build/intermediates/pre-dexed/debug/classes-138542f6d0e2f3a2ebec71ab41bd7db5a3aa14b3.jar" />
-    </item>
-    <item
-        jar="/home/misskey/AndroidStudioProjects/PictrueManager/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/jars/libs/internal_impl-22.2.0.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="57f2ab85c164ff1676ec64dee787981c046fab79">
-        <dex dex="/home/misskey/AndroidStudioProjects/PictrueManager/app/build/intermediates/pre-dexed/debug/internal_impl-22.2.0-9972109776a98f91cfb299cfbc51ffb18139681c.jar" />
+        sha1="5b37cf49773f7f17aca9830efd3053b0cac56728">
+        <dex dex="/home/misskey/AndroidStudioProjects/picturemanager/app/build/intermediates/pre-dexed/debug/classes-04e20663468598452c84391fd7cda008fc32ca0f.jar" />
     </item>
     <item
         jar="/home/misskey/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/22.2.0/support-annotations-22.2.0.jar"
         jumboMode="false"
         revision="22.0.1"
         sha1="66b42a1f3eb7676070b7ef7f14b603483aecbee1">
-        <dex dex="/home/misskey/AndroidStudioProjects/PictrueManager/app/build/intermediates/pre-dexed/debug/support-annotations-22.2.0-6b9bb7944b438f1b2012087d7e71d71f08893ab8.jar" />
+        <dex dex="/home/misskey/AndroidStudioProjects/picturemanager/app/build/intermediates/pre-dexed/debug/support-annotations-22.2.0-6b9bb7944b438f1b2012087d7e71d71f08893ab8.jar" />
+    </item>
+    <item
+        jar="/home/misskey/AndroidStudioProjects/picturemanager/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="1ee588ff2c4daf7b97c1cbf922a6c7f027285c2f">
+        <dex dex="/home/misskey/AndroidStudioProjects/picturemanager/app/build/intermediates/pre-dexed/debug/classes-a5eaf03c8b956321e71c95a7f0a925cf728c014b.jar" />
+    </item>
+    <item
+        jar="/home/misskey/AndroidStudioProjects/picturemanager/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/jars/libs/internal_impl-22.2.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="57f2ab85c164ff1676ec64dee787981c046fab79">
+        <dex dex="/home/misskey/AndroidStudioProjects/picturemanager/app/build/intermediates/pre-dexed/debug/internal_impl-22.2.0-0dfb98174dd362b89ca45079a11a3a579d1e582e.jar" />
+    </item>
+    <item
+        jar="/home/misskey/AndroidStudioProjects/picturemanager/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="73753982da6bde518f3a4c6b372749981d14d1a0">
+        <dex dex="/home/misskey/AndroidStudioProjects/picturemanager/app/build/intermediates/pre-dexed/debug/classes-e16b46118888b9a13e0a1889b6f7ad05896de755.jar" />
     </item>
 
 </items>

@@ -2,9 +2,11 @@ package misskey.com.pictruemanager.view;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Matrix;
+import android.graphics.PointF;
 import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
+import android.util.FloatMath;
 import android.util.Log;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
@@ -15,6 +17,8 @@ import android.view.View;
 import android.view.View.OnTouchListener;
 import android.view.ViewTreeObserver;
 import android.widget.ImageView;
+import android.widget.Toast;
+
 /**
  *
  * @author zhy
@@ -61,6 +65,14 @@ public class ZoomImageView extends ImageView implements OnScaleGestureListener,
 
 	private boolean isCheckTopAndBottom = true;
 	private boolean isCheckLeftAndRight = true;
+	private static final int NONE=0;
+	private static final int DRAG=1;
+	private static final int ZOOM=2;
+	private int mode=NONE;
+    private boolean isRotate;
+	private float oldRotation;
+	private boolean isFirstFinger;
+	private boolean isSecondFinger;
 
 	public ZoomImageView(Context context)
 	{
@@ -120,6 +132,7 @@ public class ZoomImageView extends ImageView implements OnScaleGestureListener,
 		static final float SMALLER = 0.93f;
 		private float mTargetScale;
 		private float tmpScale;
+		private float oldRotation;
 
 		/**
 		 * 缩放的中心
@@ -325,15 +338,39 @@ public class ZoomImageView extends ImageView implements OnScaleGestureListener,
 
 		lastPointerCount = pointerCount;
 		RectF rectF = getMatrixRectF();
-		switch (event.getAction())
+		switch (event.getAction()&MotionEvent.ACTION_MASK)
 		{
 			case MotionEvent.ACTION_DOWN:
 				if (rectF.width() > getWidth() || rectF.height() > getHeight())
 				{
 					getParent().requestDisallowInterceptTouchEvent(true);
 				}
+				isFirstFinger=true;
 				break;
+			case MotionEvent.ACTION_POINTER_DOWN:
+				if(isFirstFinger){
+					isSecondFinger=true;
+					 oldRotation=rotation(event);
+					Log.e(TAG, oldRotation+"");
+				}
+				break;
+			//判断是否移动或者是否旋转
 			case MotionEvent.ACTION_MOVE:
+				if(isSecondFinger){
+					float roate=rotation(event)-oldRotation;
+					if((roate>0&&roate<10)||(roate>-10&&roate<0)){
+						isRotate=false;
+					}else{
+						isRotate=true;
+					}
+					if(isRotate){
+						mScaleMatrix.postRotate(roate,getWidth()/2,getHeight()/2);
+						Log.e(TAG, "旋转的角度"+roate+"");
+						checkBorderAndCenterWhenScale();
+					}
+
+				}
+
 				if (rectF.width() > getWidth() || rectF.height() > getHeight())
 				{
 					getParent().requestDisallowInterceptTouchEvent(true);
@@ -386,6 +423,9 @@ public class ZoomImageView extends ImageView implements OnScaleGestureListener,
 
 			case MotionEvent.ACTION_UP:
 			case MotionEvent.ACTION_CANCEL:
+				isFirstFinger=false;
+				isRotate=false;
+				 isSecondFinger=false;
 				Log.e(TAG, "ACTION_UP");
 				lastPointerCount = 0;
 				break;
@@ -403,6 +443,27 @@ public class ZoomImageView extends ImageView implements OnScaleGestureListener,
 	{
 		mScaleMatrix.getValues(matrixValues);
 		return matrixValues[Matrix.MSCALE_X];
+	}
+	// 触碰两点间距离
+	private float spacing(MotionEvent event) {
+		float x = event.getX(0) - event.getX(1);
+		float y = event.getY(0) - event.getY(1);
+		return FloatMath.sqrt(x * x + y * y);
+	}
+
+	// 取手势中心点
+	private void midPoint(PointF point, MotionEvent event) {
+		float x = event.getX(0) + event.getX(1);
+		float y = event.getY(0) + event.getY(1);
+		point.set(x / 2, y / 2);
+	}
+
+	// 取旋转角度
+	private float rotation(MotionEvent event) {
+		double delta_x = (event.getX(0) - event.getX(1));
+		double delta_y = (event.getY(0) - event.getY(1));
+		double radians = Math.atan2(delta_y, delta_x);
+		return (float) Math.toDegrees(radians);
 	}
 
 	@Override

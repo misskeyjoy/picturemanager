@@ -23,7 +23,7 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:background="#EEDFCC"
-            android:visibility="visible"
+            android:visibility="invisible"
             android:layout_gravity="center_horizontal|bottom">
             <ImageButton
                     android:id="@+id/btn_deletepicture"

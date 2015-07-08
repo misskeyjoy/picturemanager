@@ -330,6 +330,7 @@ public class ZoomImageView extends ImageView {
 			mMinScale = in.readFloat();
 			mCurrentDegrees = in.readFloat();
 			in.readFloatArray(mMatrixCache);
+			Log.e(TAG,"测试");
 		}
 
 		@Override

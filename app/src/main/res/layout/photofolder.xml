@@ -4,11 +4,10 @@
     android:layout_height="match_parent">
     <GridView
         android:layout_margin="8dp"
-        android:paddingRight="8dp"
         android:id="@+id/photo_folder"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:horizontalSpacing="2dp"
+        android:horizontalSpacing="10dp"
         android:listSelector="#00ffffff"
         android:numColumns="3"
         android:verticalSpacing="2dp" >

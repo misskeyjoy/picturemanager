@@ -5,13 +5,13 @@ import android.os.Bundle;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.GridView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -28,21 +28,24 @@ import misskey.com.pictruemanager.utils.UniversalImageLoadTool;
  */
 public class CamePictureFragment extends Fragment {
     private GridView gridView;
-    private RecyclerView mRecycleView;
     private PhotoGridAdapter photoGridAdapter;
     private List<PhotoInfo> list;
+    private TextView textView;
 
     /**
      * 当点击gride的图片，传递给activity ，再与pictureFramgment交互
      */
     public interface  OnClickPicture{
         public void OnClickGirdePicture(String path);
+        public void OnLongClickGridePricture();//长按
     }
     private  OnClickPicture onClickPicture;
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         gridView = (GridView)getView().findViewById(R.id.gv_photos);
+        textView= (TextView) getView().findViewById(R.id.tv_empty);
+        gridView.setEmptyView(textView);
         Bundle args=getArguments();
         PhotoList photoGrid=(PhotoList) args.getSerializable("photo");
         list=new ArrayList<>();
@@ -70,6 +73,13 @@ public class CamePictureFragment extends Fragment {
 
             }
         });
+       gridView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+           @Override
+           public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+               onClickPicture.OnLongClickGridePricture();
+               return true;
+           }
+       });
     }
 
     @Override
@@ -89,4 +99,5 @@ public class CamePictureFragment extends Fragment {
                              Bundle savedInstanceState) {
         return inflater.inflate(R.layout.photogride, container, false);
     }
+
 }

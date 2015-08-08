@@ -52,6 +52,11 @@
               android:textSize="24sp"
               android:layout_height="wrap_content" />
       </LinearLayout>
+      <misskey.com.pictruemanager.view.TitleView
+          android:layout_width="fill_parent"
+          android:visibility="gone"
+          android:id="@+id/title"
+          android:layout_height="50dp"/>
   </FrameLayout>
 
 

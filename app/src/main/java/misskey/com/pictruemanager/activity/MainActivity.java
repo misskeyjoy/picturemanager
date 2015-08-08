@@ -14,6 +14,7 @@ import android.view.Window;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 
 import java.util.List;
 
@@ -23,8 +24,13 @@ import misskey.com.pictruemanager.bean.PhotoInfo;
 import misskey.com.pictruemanager.bean.PhotoList;
 import misskey.com.pictruemanager.utils.CheckImageLoaderConfiguration;
 import misskey.com.pictruemanager.utils.UniversalImageLoadTool;
+import misskey.com.pictruemanager.view.TitleView;
 
-public class MainActivity extends FragmentActivity  implements ViewPager.OnPageChangeListener,View.OnClickListener,CamePictureFragment.OnClickPicture,PhotoFolderFragment.OnPageLodingClickListener{
+public class MainActivity extends FragmentActivity  implements
+        ViewPager.OnPageChangeListener,View.OnClickListener,
+        CamePictureFragment.OnClickPicture,
+        PhotoFolderFragment.OnPageLodingClickListener,TitleView.ActionTvEvent
+ {
     private ViewPager viewPager;
     private Button btn_camepictrue,btn_allpicture;
     private PhotoFolderFragment photoFolderFragment;
@@ -33,6 +39,7 @@ public class MainActivity extends FragmentActivity  implements ViewPager.OnPageC
     private  PictureFragment pictureFragment;
     private LinearLayout ll_btn, ll_text;
     private FrameLayout frameLayout;
+    private TitleView TvTiTle;
     FragmentManager manager = getSupportFragmentManager();
     @Override
     protected void onStart() {
@@ -67,6 +74,8 @@ public class MainActivity extends FragmentActivity  implements ViewPager.OnPageC
          viewPager.setCurrentItem(0,false);
          viewPager.setOnPageChangeListener(this);
          frameLayout= (FrameLayout) findViewById(R.id.framelayout);
+         TvTiTle= (TitleView) findViewById(R.id.title);
+         TvTiTle.setAction(this);
      }
 
     /**
@@ -154,6 +163,11 @@ public class MainActivity extends FragmentActivity  implements ViewPager.OnPageC
     }
 
     @Override
+    public void OnLongClickGridePricture() {
+        TvTiTle.setVisibility(View.VISIBLE);
+    }
+
+    @Override
     public void onPageLodingClickListener(List<PhotoInfo> list) {
         Intent intent =new Intent(this,PhotoGridActivity.class);
         PhotoList photoList=new PhotoList();
@@ -164,8 +178,18 @@ public class MainActivity extends FragmentActivity  implements ViewPager.OnPageC
         startActivity(intent);
     }
 
+     @Override
+     public void setAllChoice() {
 
-    public  class MyAdapter extends FragmentStatePagerAdapter {
+     }
+
+     @Override
+     public void setBack() {
+
+     }
+
+
+     public  class MyAdapter extends FragmentStatePagerAdapter {
 
         public MyAdapter(FragmentManager fm) {
             super(fm);

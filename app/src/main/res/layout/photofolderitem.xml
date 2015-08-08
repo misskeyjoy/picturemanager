@@ -22,7 +22,8 @@
         android:background="#ccAEEEEE"
         android:gravity="center"
         android:orientation="vertical"
-        android:layout_marginBottom="10dp">
+        android:layout_marginBottom="10dp"
+        android:layout_alignParentBottom="true">
 
         <TextView
             android:id="@+id/tv_info"

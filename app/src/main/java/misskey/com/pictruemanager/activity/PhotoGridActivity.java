@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.GridView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,11 +32,14 @@ public class PhotoGridActivity extends Activity {
 
     private GridView gridView;
     private PhotoGridAdapter photoGridAdapter;
+    private TextView textView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.allphotogride);
         gridView = (GridView)findViewById(R.id.allphotos);
+        textView= (TextView) findViewById(R.id.tv_empty);
+        gridView.setEmptyView(textView);
         Bundle bundle=getIntent().getExtras();
         Log.e("TAG","启动");
         final PhotoList photoList= (PhotoList) bundle.getSerializable("list");

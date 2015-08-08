@@ -19,43 +19,6 @@
             android:layout_gravity="center"
              />
 
-        <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:background="#EEDFCC"
-            android:visibility="invisible"
-            android:layout_gravity="center_horizontal|bottom">
-            <ImageButton
-                    android:id="@+id/btn_deletepicture"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="20dp"
-                    android:background="@drawable/test1"
-                    android:textSize="20sp" />
-            <ImageButton
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:layout_margin="20dp"
-                android:background="@drawable/test1"
-                android:textSize="20sp" />
-            <ImageButton
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:layout_margin="20dp"
-                android:background="@drawable/test1"
-                android:textSize="20sp" />
-            <ImageButton
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:layout_margin="20dp"
-                android:background="@drawable/test1"
-                android:textSize="20sp" />
-
-        </LinearLayout>
 
     </FrameLayout>
 

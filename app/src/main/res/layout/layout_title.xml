@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="70dp"
+    android:background="#5B5B5B"
+   >
+  <ImageButton
+      android:id="@+id/title_iv"
+      android:layout_width="wrap_content"
+      android:layout_height="fill_parent"
+      android:src="@drawable/ic_menu_back"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="24sp"
+        android:text="Test"
+        android:id="@+id/tv_title"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+    <ImageButton
+        android:id="@+id/title_allchoice"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:src="@drawable/menu_check_on_disabled_holo_light"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+</RelativeLayout>

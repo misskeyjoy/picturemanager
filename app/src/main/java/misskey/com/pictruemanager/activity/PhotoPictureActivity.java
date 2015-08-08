@@ -7,12 +7,19 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.DisplayMetrics;
+import android.view.ContextMenu;
+import android.view.Menu;
 import android.view.View;
+import android.view.ViewConfiguration;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ProgressBar;
+
+import java.lang.reflect.Field;
+import java.lang.reflect.Method;
 
 import misskey.com.pictruemanager.R;
 import misskey.com.pictruemanager.view.ZoomImageView;
@@ -20,7 +27,7 @@ import misskey.com.pictruemanager.view.ZoomImageView;
 /**
  * Created by misskey on 15-6-10.
  */
-public class PhotoPictureActivity extends Activity  {
+public class PhotoPictureActivity extends AppCompatActivity {
     private ZoomImageView zoomImageView;
     private Button btn_delete;
     private String path;
@@ -30,8 +37,9 @@ public class PhotoPictureActivity extends Activity  {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
+
         setContentView(R.layout.showpicture_layout);
+        setOverflowButtonAlways();
         getId();
         new AsynTask().execute();
     }
@@ -110,9 +118,31 @@ public class PhotoPictureActivity extends Activity  {
 
     @Override
     public void onDestroy() {
+        bitmap.recycle();
         zoomImageView.setImageBitmap(null);
         super.onDestroy();
 
 
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.activity_showpictur_main, menu);
+        return true;
+    }
+
+    private  void  setOverflowButtonAlways(){
+        ViewConfiguration configuration=ViewConfiguration.get(this);
+        try {
+            Field menuKey=ViewConfiguration.class.getDeclaredField("sHasPermanentMenuKey");
+            menuKey.setAccessible(true);
+            menuKey.setBoolean(configuration,false);
+        } catch (NoSuchFieldException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        }
+    }
+
+
 }
